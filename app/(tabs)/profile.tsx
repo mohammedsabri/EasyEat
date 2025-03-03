@@ -1,10 +1,32 @@
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, Alert } from 'react-native';
 import { router } from 'expo-router';
 
 export default function Profile() {
   const handleLogout = () => {
-    // TODO: Implement logout logic (clear user session, etc.)
-    router.replace('/');
+    Alert.alert(
+      "Logout",
+      "Are you sure you want to logout?",
+      [
+        {
+          text: "Cancel",
+          style: "cancel"
+        },
+        {
+          text: "Logout",
+          style: "destructive",
+          onPress: () => {
+            // Clear any stored user data or tokens here
+            // For example: AsyncStorage.removeItem('userToken')
+            
+            // Navigate to welcome page and clear navigation stack
+            router.replace('/(tabs)');
+            setTimeout(() => {
+              router.replace('/');
+            }, 100);
+          }
+        }
+      ]
+    );
   };
 
   return (
