@@ -1,89 +1,187 @@
-import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
-import { Link } from 'expo-router';
+import React from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  SafeAreaView,
+  Image,
+  ImageBackground,
+  Dimensions,
+} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import { router } from 'expo-router';
+import { MaterialIcons } from '@expo/vector-icons';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 
-export default function Welcome() {
+const { width, height } = Dimensions.get('window');
+
+export default function StartScreen() {
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-      <View style={styles.content}>
-        <Image
-          source={require('@/assets/images/Designer.png')}
-          style={styles.logo}
-          resizeMode="cover"
-        />
-        <Text style={styles.title}>Welcome to EasyEat</Text>
-        <Text style={styles.subtitle}>Your personal food companion</Text>
-        
-        <View style={styles.buttonContainer}>
-          <Link href="/signup" asChild>
-            <TouchableOpacity style={[styles.button, styles.signupButton]}>
-              <Text style={styles.buttonText}>Sign Up</Text>
+    <SafeAreaView style={styles.container}>
+      <StatusBar style="light" />
+      <ImageBackground
+        source={require('@/assets/images/landing-bg.jpg')}
+        style={styles.backgroundImage}
+        resizeMode="cover"
+      >
+        <View style={styles.overlay}>
+          <View style={styles.topSection}>
+            <Image
+              source={require('@/assets/images/logo.png')}
+              style={styles.logo}
+              resizeMode="contain"
+            />
+            <Text style={styles.title}>EasyEat</Text>
+            <Text style={styles.tagline}>Delicious food at your doorstep</Text>
+          </View>
+
+          <View style={styles.bottomSection}>
+            <Text style={styles.questionText}>How are you using EasyEat?</Text>
+
+            <TouchableOpacity
+              style={styles.optionButton}
+              onPress={() => router.push('/(auth)/login')}
+            >
+              <View style={styles.optionContent}>
+                <View style={styles.iconContainer}>
+                  <MaterialIcons name="person" size={wp('6%')} color="#FF4B3E" />
+                </View>
+                <View style={styles.optionTextContainer}>
+                  <Text style={styles.optionTitle}>I'm a Customer</Text>
+                  <Text style={styles.optionDescription}>Order delicious meals from local chefs</Text>
+                </View>
+              </View>
+              <MaterialIcons name="chevron-right" size={wp('6%')} color="#666" />
             </TouchableOpacity>
-          </Link>
-          
-          <Link href="/login" asChild>
-            <TouchableOpacity style={[styles.button, styles.loginButton]}>
-              <Text style={[styles.buttonText, styles.loginButtonText]}>Get Started</Text>
+
+            <TouchableOpacity
+              style={styles.optionButton}
+              onPress={() => router.push('/chef-admin/login')}
+            >
+              <View style={styles.optionContent}>
+                <View style={styles.iconContainer}>
+                  <MaterialIcons name="restaurant" size={wp('6%')} color="#FF4B3E" />
+                </View>
+                <View style={styles.optionTextContainer}>
+                  <Text style={styles.optionTitle}>I'm a Chef</Text>
+                  <Text style={styles.optionDescription}>Manage your menu and track orders</Text>
+                </View>
+              </View>
+              <MaterialIcons name="chevron-right" size={wp('6%')} color="#666" />
             </TouchableOpacity>
-          </Link>
+
+            <Text style={styles.footerText}>© 2025 EasyEat. All rights reserved.</Text>
+          </View>
         </View>
-      </View>
-    </View>
+      </ImageBackground>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-  },
-  content: {
-    flex: 1,
-    alignItems: 'center',
+    backgroundColor: '#FF4B3E',
     justifyContent: 'center',
-    paddingHorizontal: 20,
-  },
-  title: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    color: '#333',
-    marginBottom: 10,
-  },
-  subtitle: {
-    fontSize: 18,
-    color: '#666',
-    marginBottom: 40,
-  },
-  buttonContainer: {
-    width: '100%',
-    gap: 15,
-  },
-  button: {
-    width: '100%',
-    paddingVertical: 15,
-    borderRadius: 10,
     alignItems: 'center',
   },
-  signupButton: {
-    backgroundColor: '#FF6B6B',
+  backgroundImage: {
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+
   },
-  loginButton: {
-    backgroundColor: 'transparent',
-    borderWidth: 2,
-    borderColor: '#FF6B6B',
+  overlay: {
+    flex: 1,
+    backgroundColor: 'rgba(255, 75, 62.0, 0.8)',
+    justifyContent: 'space-between',
   },
-  buttonText: {
-    color: '#fff',
-    fontSize: 18,
-    fontWeight: '600',
-  },
-  loginButtonText: {
-    color: '#FF6B6B',
+  topSection: {
+    alignItems: 'center',
+    paddingTop: hp('10%'),
   },
   logo: {
-    width: 100,
-    height: 100,
-    marginBottom: 20,
+    width: wp('50.5%'),
+    height: wp('50.5%'),
+    marginBottom: hp('2%'),
   },
-}); 
+  title: {
+    fontFamily: 'Poppins_600SemiBold',
+    fontSize: wp('8%'),
+    color: 'white',
+    marginBottom: hp('1%'),
+  },
+  tagline: {
+    fontFamily: 'Poppins_400Regular',
+    fontSize: wp('4%'),
+    color: '#f0f0f0',
+    marginBottom: hp('2%'),
+  },
+  bottomSection: {
+    backgroundColor: 'white',
+    borderTopLeftRadius: wp('8%'),
+    borderTopRightRadius: wp('8%'),
+    padding: wp('6%'),
+    paddingTop: wp('8%'),
+    paddingBottom: hp('4%'),
+  },
+  questionText: {
+    fontFamily: 'Poppins_600SemiBold',
+    fontSize: wp('5%'),
+    color: '#333',
+    marginBottom: hp('3%'),
+    textAlign: 'center',
+  },
+  optionButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    backgroundColor: 'white',
+    borderRadius: wp('4%'),
+    padding: wp('4%'),
+    marginBottom: hp('2%'),
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  optionContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flex: 1,
+  },
+  iconContainer: {
+    width: wp('12%'),
+    height: wp('12%'),
+    borderRadius: wp('6%'),
+    backgroundColor: '#FFF0EF',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: wp('4%'),
+  },
+  optionTextContainer: {
+    flex: 1,
+  },
+  optionTitle: {
+    fontFamily: 'Poppins_600SemiBold',
+    fontSize: wp('4.5%'),
+    color: '#333',
+  },
+  optionDescription: {
+    fontFamily: 'Poppins_400Regular',
+    fontSize: wp('3.5%'),
+    color: '#666',
+  },
+  footerText: {
+    fontFamily: 'Poppins_400Regular',
+    fontSize: wp('3%'),
+    color: '#999',
+    textAlign: 'center',
+    marginTop: hp('3%'),
+  },
+});
