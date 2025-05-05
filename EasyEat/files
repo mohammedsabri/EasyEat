@@ -1,0 +1,21 @@
+// // Import the functions you need from the SDKs you need
+// import { initializeApp } from "firebase/app";
+// import { getAnalytics } from "firebase/analytics";
+// // TODO: Add SDKs for Firebase products that you want to use
+// // https://firebase.google.com/docs/web/setup#available-libraries
+
+// // Your web app's Firebase configuration
+// // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// const firebaseConfig = {
+//   apiKey: "AIzaSyAkShRG4tLiVU3zB8lrkE8v7-r5jQJwPM0",
+//   authDomain: "easyeat-22a64.firebaseapp.com",
+//   projectId: "easyeat-22a64",
+//   storageBucket: "easyeat-22a64.firebasestorage.app",
+//   messagingSenderId: "1026057861190",
+//   appId: "1:1026057861190:web:1ea67698271755dcbdb247",
+//   measurementId: "G-T2GEWVNLTC"
+// };
+
+// // Initialize Firebase
+// const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "638929609799",
+    "firebase_url": "https://mo-work-project-490c4-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "mo-work-project-490c4",
+    "storage_bucket": "mo-work-project-490c4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:638929609799:android:4060008451e8f0fd797d62",
+        "android_client_info": {
+          "package_name": "com.mo.work"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "638929609799-paal0p0fqk8jh9e2hg6vh33v7hdbt99j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMFxOU_mK3jNdKVB0O8pnmpH5eH0u0bcE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "638929609799-paal0p0fqk8jh9e2hg6vh33v7hdbt99j.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "638929609799-6j4gnc3s2n21fdajufthh90s3m1c2g07.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mo.work"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
