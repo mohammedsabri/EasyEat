@@ -56,7 +56,7 @@ A modern food delivery app built with **Expo** and **React Native**. Features a 
 2. **Setup**:
    - Clone the repository:
      ```bash
-     git clone https://github.com/Maxamed-Maxamed/react-native-app-for-food.-.git
+     git clone https://github.com/mohammedsabri/EasyEat.git
      ```
    - Install dependencies:
      ```bash
