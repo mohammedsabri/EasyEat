@@ -1,10 +1,10 @@
-# Fresh Food Delivery App 🍴
+# Fresh Food Delivery App 
 
 A modern food delivery app built with **Expo** and **React Native**. Features a clean and intuitive UI with seamless navigation between screens, including a welcome page, login, and signup flows. Designed for scalability and a great user experience.
 
 ---
 
-## Features ✨
+## Features 
 - **Welcome Screen**: Engaging introduction with a "Get Started" button.
 - **Login Screen**: Secure login with email and password fields.
 - **Signup Screen**: Easy account creation with terms and conditions agreement.
@@ -13,7 +13,7 @@ A modern food delivery app built with **Expo** and **React Native**. Features a 
 
 ---
 
-## Tech Stack 🛠️
+## Tech Stack 
 - **Frontend**: React Native, Expo
 - **Navigation**: Expo Router
 - **Styling**: React Native StyleSheet
@@ -28,7 +28,7 @@ A modern food delivery app built with **Expo** and **React Native**. Features a 
 <img src="./assets/images/example.png" alt="FIGMA design" width="400" />
 
 
-## Project Structure 📂
+## Project Structure 
 ├── app/ # Main app screens and navigation
 │ ├── welcomepage.tsx # Welcome screen
 │ ├── login.tsx # Login screen
@@ -45,7 +45,7 @@ A modern food delivery app built with **Expo** and **React Native**. Features a 
 
 ---
 
-## Installation 📦
+## Installation 
 1. **Prerequisites**:
    - Install [Node.js](https://nodejs.org/) (v18 or higher recommended).
    - Install Expo CLI globally:
@@ -72,21 +72,21 @@ A modern food delivery app built with **Expo** and **React Native**. Features a 
 
 ---
 
-## Usage 📱
+## Usage 
 - **Welcome Screen**: Tap "Get Started" to navigate to the login screen.
 - **Login Screen**: Enter your email and password to log in.
 - **Signup Screen**: Create a new account with email, password, and terms agreement.
 
 ---
 
-## Future Plans 📅
+## Future Plans 
 - Add menu browsing and food ordering functionality.
 - Integrate payment gateway for seamless transactions.
 - Implement user profile and order history screens.
 
 ---
 
-## Contributing 🤝
+## Contributing 
 Contributions are welcome! Please follow these steps:
 1. Fork the repository.
 2. Create a new branch for your feature or bug fix.
@@ -94,5 +94,5 @@ Contributions are welcome! Please follow these steps:
 
 ---
 
-## License 📄
+## License 
 This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
